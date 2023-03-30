@@ -1,0 +1,6 @@
+ What is Apache Spark and what are the benefits of Spark over MapReduce?
+
+Spark is really fast. If run in-memory it is 100x faster than Hadoop MapReduce.
+In Hadoop MapReduce, you write many MapReduce jobs and then tie these jobs together using Oozie/shell script. This mechanism is very time consuming and MapReduce tasks have heavy latency. Between two consecutive MapReduce jobs, the data has to be written to HDFS and read from HDFS. This is time-consuming. In case of Spark, this is avoided using RDDs and utilizing memory (RAM). And quite often, translating the output of one MapReduce job into the input of another MapReduce job might require writing another code because Oozie may not suffice.
+In Spark, you can basically do everything from single code or console (PySpark or Scala console) and get the results immediately. Switching between ‘Running something on cluster’ and ‘doing something locally’ is fairly easy and straightforward. This also leads to less context switch of the developer and more productivity.
+Spark kind of equals to MapReduce and Oozie put together.
